@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Exemplo de recurso
+
+Parameters:
+  NomeEC2:
+    Type: String
+    Description: Nome que será utilizado na EC2
+
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-blablabla
+      IamInstanceProfile: ECS-Role....
+      Tags:
+        - Key: "Name"
+        Value:
+          Ref: NomeEC2
